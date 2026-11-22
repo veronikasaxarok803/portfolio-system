@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { inter, spaceGrotesk, ibmPlexMono } from "./fonts";
 import "./globals.css";
+import "./sections.css";
 
 export const metadata: Metadata = {
   title: "Veronika Haran — UI/UX & Web Designer",

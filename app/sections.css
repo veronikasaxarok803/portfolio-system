@@ -1,0 +1,452 @@
+/* Секції 02–06 та футер. Значення беруться з токенів у globals.css. */
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-inline: 108px;
+}
+
+.section {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+.section-rule {
+  border-top: 1px solid var(--color-line);
+}
+
+.eyebrow {
+  margin: 0;
+  font: 500 12px/1.5 var(--font-mono);
+  color: var(--color-accent);
+}
+
+.eyebrow-coral {
+  color: var(--color-coral);
+}
+
+.eyebrow-ink {
+  color: var(--color-ink);
+}
+
+.h-section {
+  margin: 0;
+  font: 700 72px/1.1 var(--font-grotesk);
+  letter-spacing: -3.24px;
+}
+
+/* 02 Selected concepts */
+.concepts {
+  padding: 58px 0 152px;
+}
+
+.concepts-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: 33px;
+}
+
+.lead {
+  margin: 22px 0 0;
+  max-width: 780px;
+  font: 400 20px/1.45 var(--font-sans);
+  color: var(--color-ink-muted);
+}
+
+.tag-note {
+  margin: 131px 0 0;
+  font: 500 11px/1.45 var(--font-mono);
+  color: var(--color-ink-muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 596px);
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.concept-scroll {
+  overflow-x: auto;
+}
+
+.concept {
+  position: relative;
+  width: 596px;
+  height: 454px;
+  overflow: hidden;
+}
+
+.concept-forma {
+  background: var(--color-forma);
+}
+
+.concept-clarity {
+  background: var(--color-clarity);
+}
+
+.concept-screen {
+  position: absolute;
+  overflow: hidden;
+}
+
+.concept-title {
+  margin: 29px 0 0;
+  font: 700 27px/1.2 var(--font-grotesk);
+  letter-spacing: -1.215px;
+}
+
+.concept-kind {
+  margin: 14px 0 0;
+  font: 500 12px/1.45 var(--font-mono);
+  color: var(--color-ink-muted);
+}
+
+.concept-desc {
+  margin: 14px 0 0;
+  font: 400 18px/1.45 var(--font-sans);
+  color: var(--color-ink-muted);
+}
+
+/* 03 Services */
+.services {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  column-gap: 0;
+  align-content: start;
+  min-height: 658px;
+  padding: 58px 0 60px;
+}
+
+.h-services {
+  margin-top: 40px;
+  font-size: 64px;
+  line-height: 1.08;
+  letter-spacing: -2.56px;
+}
+
+.services-lead {
+  margin: 46px 0 0;
+  font: 400 19px/1.5 var(--font-sans);
+  color: var(--color-ink-muted);
+}
+
+.service-list {
+  margin: -58px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  height: 164px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-line);
+}
+
+.service-n {
+  padding-top: 11px;
+  font: 500 12px/1.5 var(--font-mono);
+  color: var(--color-accent);
+}
+
+.service-title {
+  margin: 0;
+  font: 700 31px/1.2 var(--font-grotesk);
+  letter-spacing: -1.24px;
+}
+
+.service-text {
+  margin: 10px 0 0;
+  max-width: 640px;
+  font: 400 18px/1.5 var(--font-sans);
+  color: var(--color-ink-muted);
+}
+
+.service-tags {
+  margin: 38px 0 0;
+  font: 500 11px/1.5 var(--font-mono);
+  color: var(--color-ink-muted);
+}
+
+/* 04 About */
+.about {
+  background: var(--color-night);
+  color: var(--color-canvas);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 514px 1fr;
+  padding-top: 66px;
+  padding-bottom: 100px;
+}
+
+.about-title {
+  margin: 38px 0 0;
+  font: 700 60px/1.1 var(--font-grotesk);
+  letter-spacing: -2.4px;
+}
+
+.about-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 75px;
+}
+
+.about-num {
+  width: 126px;
+  font: 700 94px/1 var(--font-grotesk);
+  letter-spacing: -3.76px;
+}
+
+.about-stat-label {
+  font: 500 12px/1.6 var(--font-mono);
+  color: var(--color-night-text);
+}
+
+.about-right {
+  padding-top: 55px;
+}
+
+.about-heading {
+  margin: 0;
+  font: 700 43px/1.2 var(--font-grotesk);
+  letter-spacing: -1.72px;
+}
+
+.about-text {
+  margin: 34px 0 0;
+  max-width: 680px;
+  font: 400 20px/1.6 var(--font-sans);
+  color: var(--color-night-text);
+}
+
+.about-principles {
+  margin: 0;
+  padding-top: 25px;
+  border-top: 1px solid var(--color-night-rule);
+  font: 500 11px/1.5 var(--font-mono);
+  color: var(--color-coral);
+}
+
+.about-text + .about-principles {
+  margin-top: 44px;
+}
+
+/* 05 Process */
+.process {
+  padding: 64px 0 106px;
+}
+
+.h-process {
+  margin-top: 35px;
+  font-size: 60px;
+  letter-spacing: -2.4px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin: 72px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  border-top: 1px solid var(--color-line);
+  padding-top: 21px;
+}
+
+.step-n {
+  font: 500 12px/1.5 var(--font-mono);
+  color: var(--color-accent);
+}
+
+.step-title {
+  margin: 26px 0 0;
+  font: 700 31px/1.2 var(--font-grotesk);
+  letter-spacing: -1.24px;
+}
+
+.step-text {
+  margin: 16px 0 0;
+  max-width: 268px;
+  font: 400 18px/1.55 var(--font-sans);
+  color: var(--color-ink-muted);
+}
+
+/* 06 Contact */
+.contact {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 742px 1fr;
+  padding-top: 63px;
+  padding-bottom: 82px;
+}
+
+.contact-title {
+  margin: 44px 0 0;
+  font: 700 75px/1.05 var(--font-grotesk);
+  letter-spacing: -3px;
+}
+
+.contact-lead {
+  margin: 39px 0 0;
+  max-width: 612px;
+  font: 400 20px/1.5 var(--font-sans);
+}
+
+.contact-form {
+  padding-top: 13px;
+}
+
+.field {
+  display: block;
+  margin-top: 23px;
+}
+
+.field:first-child {
+  margin-top: 0;
+}
+
+.field-label {
+  display: block;
+  font: 500 11px/1.5 var(--font-mono);
+}
+
+.field-input {
+  display: block;
+  width: 100%;
+  height: 41px;
+  margin-top: 10px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-accent-deep);
+  border-radius: 0;
+  background: transparent;
+  font: 400 18px/1.5 var(--font-sans);
+  color: var(--color-ink);
+  outline: none;
+  resize: none;
+}
+
+.field-textarea {
+  height: 59px;
+}
+
+.field-input::placeholder {
+  color: var(--color-accent-ink);
+  opacity: 1;
+}
+
+.field-input:focus-visible {
+  border-bottom-color: var(--color-ink);
+  box-shadow: 0 1px 0 var(--color-ink);
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 57px;
+  margin-top: 30px;
+  padding: 0 22px;
+  border: 0;
+  background: var(--color-ink);
+  color: var(--color-canvas);
+  font: 500 13px var(--font-mono);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+}
+
+.contact-btn:focus-visible {
+  outline: 2px solid var(--color-canvas);
+  outline-offset: 3px;
+}
+
+.contact-btn-arrow {
+  font: 400 26px var(--font-sans);
+}
+
+/* Footer */
+.footer {
+  background: var(--color-canvas);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 130px;
+  border-top: 1px solid var(--color-line);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-sig {
+  font: 500 25px/1.2 var(--font-mono);
+}
+
+.footer-copy {
+  margin-left: 46px;
+  font: 500 12px/1.5 var(--font-mono);
+  color: var(--color-ink-muted);
+}
+
+.footer-note {
+  margin: 0;
+  font: 500 11px/1.5 var(--font-mono);
+  color: var(--color-ink-muted);
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .container { padding-inline: 48px; }
+  .h-section { font-size: clamp(44px, 7vw, 72px); }
+  .concept-grid { grid-template-columns: 1fr; justify-content: start; }
+  .services { grid-template-columns: 1fr; row-gap: 40px; }
+  .service-list { margin-top: 0; }
+  .about-grid { grid-template-columns: 1fr; row-gap: 40px; }
+  .about-right { padding-top: 0; }
+  .steps { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+  .contact-grid { grid-template-columns: 1fr; row-gap: 48px; }
+  .tag-note { display: none; }
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .container { padding-inline: 20px; }
+  .concepts { padding-bottom: 80px; }
+  .h-services { font-size: 44px; }
+  .service { height: auto; padding-bottom: 28px; }
+  .service-tags { margin-top: 16px; }
+  .about-title { font-size: 44px; }
+  .about-heading { font-size: 30px; }
+  .steps { grid-template-columns: 1fr; }
+  .h-process { font-size: 40px; }
+  .contact-title { font-size: 48px; letter-spacing: -2px; }
+  .footer-inner { flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; }
+  .footer-copy { margin-left: 16px; }
+}
