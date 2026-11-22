@@ -21,6 +21,7 @@ const meta = {
 | \`error\` | \`true\`, \`false\` | \`false\` |
 | \`errorText\` | текст помилки під полем | не задано |
 | \`disabled\` | \`true\`, \`false\` | \`false\` |
+| \`multiline\` | \`true\` — багаторядкове поле (\`<textarea>\`), \`false\` | \`false\` |
 | \`type\` | як у \`<input>\` | \`text\` |
 | \`placeholder\`, \`name\`, \`autoComplete\`, \`onChange\` | як у \`<input>\` | не задано |
 
@@ -46,7 +47,7 @@ const meta = {
 - Один рядок тексту: ім'я, пошта, тема.
 - Не використовуй поле без підпису: підпис потрібен і людям, і скрінрідерам. Підказка в самому полі підпис не замінює.
 - Текст помилки пиши так, щоб було зрозуміло, що виправити: «Введіть пошту у форматі name@example.com», а не «Помилка».
-- Для довгого тексту потрібне окреме багаторядкове поле, цей компонент для нього не підходить.
+- Для довшого тексту (опис проєкту) став \`multiline\`: поле стає багаторядковим, стани ті самі.
 
 ### Як брати в код
 
@@ -63,6 +64,8 @@ import { FormField } from "@/app/components/FormField";
 />
 
 <FormField label="Project" disabled />
+
+<FormField label="About your project" multiline placeholder="What would you like to create?" />
 \`\`\`
         `,
       },
@@ -75,6 +78,7 @@ import { FormField } from "@/app/components/FormField";
     error: { control: "boolean" },
     errorText: { control: "text" },
     disabled: { control: "boolean" },
+    multiline: { control: "boolean" },
   },
   args: {
     label: "Email address",
@@ -83,6 +87,7 @@ import { FormField } from "@/app/components/FormField";
     error: false,
     errorText: "Enter an email like name@example.com",
     disabled: false,
+    multiline: false,
   },
 } satisfies Meta<typeof FormField>;
 

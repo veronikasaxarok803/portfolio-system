@@ -1,3 +1,6 @@
+import { Button } from "../components/Button";
+import { FormField } from "../components/FormField";
+
 export default function Contact() {
   return (
     <>
@@ -16,23 +19,14 @@ export default function Contact() {
               Let’s find the right direction together.
             </p>
           </div>
-          <form className="contact-form">
-            <label className="field">
-              <span className="field-label font-ui text-label">YOUR NAME</span>
-              <input className="field-input font-body text-body" name="name" type="text" placeholder="How should I call you?" autoComplete="name" />
-            </label>
-            <label className="field">
-              <span className="field-label font-ui text-label">EMAIL ADDRESS</span>
-              <input className="field-input font-body text-body" name="email" type="email" placeholder="Where can I reach you?" autoComplete="email" />
-            </label>
-            <label className="field">
-              <span className="field-label font-ui text-label">A LITTLE ABOUT YOUR PROJECT</span>
-              <textarea className="field-input field-textarea font-body text-body" name="project" placeholder="What would you like to create?" />
-            </label>
-            <button className="contact-btn font-ui text-button" type="button">
+          <form className="contact-form flex flex-col gap-6">
+            <FormField label="YOUR NAME" name="name" type="text" placeholder="How should I call you?" autoComplete="name" />
+            <FormField label="EMAIL ADDRESS" name="email" type="email" placeholder="Where can I reach you?" autoComplete="email" />
+            <FormField label="A LITTLE ABOUT YOUR PROJECT" name="project" multiline placeholder="What would you like to create?" />
+            <Button variant="secondary" size="lg" type="submit" className="w-full justify-between! border-ink">
               <span>LET’S TALK</span>
               <span className="font-body text-arrow" aria-hidden="true">↗</span>
-            </button>
+            </Button>
           </form>
         </div>
       </section>

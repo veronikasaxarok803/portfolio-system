@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState, type ChangeEvent, type InputHTMLAttributes, type ReactNode } from "react";
+import { useId, useState, type ChangeEvent, type InputHTMLAttributes, type ReactNode, type TextareaHTMLAttributes } from "react";
 
 export type FormFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> & {
   /** Підпис поля. Завжди стоїть над полем і зв'язаний з ним через `htmlFor`. */
@@ -9,6 +9,8 @@ export type FormFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size">
   error?: boolean;
   /** Текст помилки під полем, з іконкою. Показується тільки коли `error`. */
   errorText?: string;
+  /** Багаторядкове поле (`<textarea>`) для довшого тексту, наприклад опису проєкту. */
+  multiline?: boolean;
 };
 
 const fieldBase =
@@ -37,6 +39,7 @@ export function FormField({
   label,
   error = false,
   errorText,
+  multiline = false,
   disabled = false,
   id,
   type = "text",
@@ -55,9 +58,20 @@ export function FormField({
   const filled = !disabled && current.length > 0;
   const showError = error && Boolean(errorText);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement & HTMLTextAreaElement>) => {
     setTyped(event.target.value);
     onChange?.(event);
+  };
+
+  const controlProps = {
+    id: inputId,
+    disabled,
+    value,
+    defaultValue,
+    onChange: handleChange,
+    "aria-invalid": error || undefined,
+    "aria-describedby": showError ? errorId : rest["aria-describedby"],
+    "data-filled": filled ? "" : undefined,
   };
 
   return (
@@ -65,19 +79,21 @@ export function FormField({
       <label htmlFor={inputId} className="font-ui text-label text-ink">
         {label}
       </label>
-      <input
-        {...rest}
-        id={inputId}
-        type={type}
-        disabled={disabled}
-        value={value}
-        defaultValue={defaultValue}
-        onChange={handleChange}
-        aria-invalid={error || undefined}
-        aria-describedby={showError ? errorId : rest["aria-describedby"]}
-        data-filled={filled ? "" : undefined}
-        className={`${fieldBase} ${error ? borderError : borderDefault} ${className}`.trim()}
-      />
+      {multiline ? (
+        <textarea
+          {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)}
+          {...controlProps}
+          rows={3}
+          className={`${fieldBase} resize-none ${error ? borderError : borderDefault} ${className}`.trim()}
+        />
+      ) : (
+        <input
+          {...rest}
+          {...controlProps}
+          type={type}
+          className={`${fieldBase} ${error ? borderError : borderDefault} ${className}`.trim()}
+        />
+      )}
       {showError && (
         <p id={errorId} className="flex items-start gap-2 font-ui text-label text-danger">
           <ErrorIcon />

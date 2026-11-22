@@ -122,12 +122,12 @@
   display: grid;
   grid-template-columns: 62px 1fr;
   height: 164px;
-  padding-top: 10px;
+  padding-top: 8px;
   border-top: 1px solid var(--color-line);
 }
 
 .service > span {
-  padding-top: 11px;
+  padding-top: 12px;
 }
 
 .service-text {
@@ -246,71 +246,6 @@
 
 .contact-form {
   padding-top: 12px;
-}
-
-.field {
-  display: block;
-  margin-top: 24px;
-}
-
-.field:first-child {
-  margin-top: 0;
-}
-
-.field-label {
-  display: block;
-}
-
-.field-input {
-  display: block;
-  width: 100%;
-  height: 40px;
-  margin-top: 8px;
-  padding: 0;
-  border: 0;
-  border-bottom: 1px solid var(--color-ink);
-  border-radius: 0;
-  background: transparent;
-  color: var(--color-ink);
-  outline: none;
-  resize: none;
-}
-
-.field-textarea {
-  height: 56px;
-}
-
-.field-input::placeholder {
-  color: var(--color-ink);
-  opacity: 1;
-}
-
-.field-input:focus-visible {
-  box-shadow: 0 1px 0 var(--color-ink);
-}
-
-.contact-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 56px;
-  margin-top: 32px;
-  padding: 0 24px;
-  border: 0;
-  background: var(--color-ink);
-  color: var(--color-canvas);
-  cursor: pointer;
-  transition: transform 0.15s ease;
-}
-
-.contact-btn:hover {
-  transform: translateY(-2px);
-}
-
-.contact-btn:focus-visible {
-  outline: 2px solid var(--color-canvas);
-  outline-offset: 3px;
 }
 
 /* Footer */

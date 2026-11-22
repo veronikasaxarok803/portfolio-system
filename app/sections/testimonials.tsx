@@ -28,7 +28,7 @@ export default function Testimonials() {
         <div className="py-8">
           <SectionMarker index="06" className="mt-8">TESTIMONIALS</SectionMarker>
           <h2 className="mt-6 font-display text-title">Kind words from clients.</h2>
-          <ul className="mt-8 grid grid-cols-1 gap-6 min-[1201px]:grid-cols-3">
+          <ul className="mt-8 grid grid-cols-1 gap-6 xl:grid-cols-3">
             {testimonials.map((t) => (
               <li key={t.name} className="flex flex-col gap-6 rounded-card border border-line bg-surface p-6">
                 <blockquote className="font-body text-body">“{t.text}”</blockquote>
