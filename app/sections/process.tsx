@@ -9,14 +9,14 @@ export default function Process() {
   return (
     <section className="section process">
       <div className="container">
-        <p className="eyebrow">05 / HOW WE GET THERE</p>
-        <h2 className="h-section h-process">A clear path from idea to launch.</h2>
+        <p className="font-ui text-label">05 / HOW WE GET THERE</p>
+        <h2 className="h-process font-display text-title">A clear path from idea to launch.</h2>
         <ol className="steps">
           {steps.map(([n, title, text]) => (
             <li key={n} className="step">
-              <span className="step-n">{n}</span>
-              <h3 className="step-title">{title}</h3>
-              <p className="step-text">{text}</p>
+              <span className="font-ui text-label">{n}</span>
+              <h3 className="step-title font-display text-subheading">{title}</h3>
+              <p className="step-text font-body text-body">{text}</p>
             </li>
           ))}
         </ol>

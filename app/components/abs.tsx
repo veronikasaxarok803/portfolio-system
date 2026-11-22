@@ -5,7 +5,7 @@ type Props = {
   y: number;
   w?: number;
   h?: number;
-  font?: "sans" | "grotesk" | "mono";
+  font?: "body" | "display" | "ui";
   size?: number;
   color?: string;
   ls?: number;
@@ -16,7 +16,7 @@ type Props = {
 };
 
 /** Абсолютно позиціонований елемент усередині ілюстрації-концепту (мокап картки). */
-export function Abs({ x, y, w, h, font = "sans", size, color, ls, lh = 1.45, bg, pre, children }: Props) {
+export function Abs({ x, y, w, h, font = "body", size, color, ls, lh = 1.45, bg, pre, children }: Props) {
   const style: CSSProperties = {
     position: "absolute",
     left: x,
@@ -24,7 +24,7 @@ export function Abs({ x, y, w, h, font = "sans", size, color, ls, lh = 1.45, bg,
     width: w,
     height: h,
     fontFamily: `var(--font-${font})`,
-    fontWeight: font === "grotesk" ? 700 : font === "mono" ? 500 : 400,
+    fontWeight: font === "display" ? 700 : font === "ui" ? 500 : 400,
     fontSize: size,
     lineHeight: lh,
     letterSpacing: ls,

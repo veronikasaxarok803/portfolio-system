@@ -25,13 +25,13 @@ export default function Services() {
       <div className="container">
         <div className="section-inner section-rule services">
           <div className="services-intro">
-            <p className="eyebrow">03 / WHAT I CAN HELP WITH</p>
-            <h2 className="h-section h-services">
+            <p className="font-ui text-label">03 / WHAT I CAN HELP WITH</p>
+            <h2 className="h-services font-display text-title">
               Design with
               <br />
               a purpose.
             </h2>
-            <p className="services-lead">
+            <p className="services-lead font-body text-body">
               From the first question to the final screen.
               <br />
               Thoughtful design at every step.
@@ -40,11 +40,11 @@ export default function Services() {
           <ol className="service-list">
             {services.map((s) => (
               <li key={s.n} className="service">
-                <span className="service-n">{s.n}</span>
+                <span className="font-ui text-label">{s.n}</span>
                 <div>
-                  <h3 className="service-title">{s.title}</h3>
-                  <p className="service-text">{s.text}</p>
-                  <p className="service-tags">{s.tags}</p>
+                  <h3 className="font-display text-subheading">{s.title}</h3>
+                  <p className="service-text font-body text-body">{s.text}</p>
+                  <p className="service-tags font-ui text-label">{s.tags}</p>
                 </div>
               </li>
             ))}

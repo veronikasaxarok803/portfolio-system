@@ -6,6 +6,7 @@ export const inter = Inter({
   display: "swap",
 });
 
+// Space Grotesk не має кирилиці в Google Fonts: для кириличних слів у заголовках спрацює запасний шрифт.
 export const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["700"],
