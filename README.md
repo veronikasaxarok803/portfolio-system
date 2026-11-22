@@ -1,3 +1,7 @@
+# Portfolio — Veronika Haran
+
+Design source (Figma): https://www.figma.com/design/Q1V8vvNRLjEQbGmvW9EnGx/portfolio_lend?node-id=2-3430
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
