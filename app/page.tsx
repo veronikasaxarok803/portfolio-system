@@ -3,6 +3,7 @@ import Concepts from "./sections/concepts";
 import Services from "./sections/services";
 import About from "./sections/about";
 import Process from "./sections/process";
+import Testimonials from "./sections/testimonials";
 import Contact from "./sections/contact";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Services />
       <About />
       <Process />
+      <Testimonials />
       <Contact />
     </main>
   );

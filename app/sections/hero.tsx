@@ -1,75 +1,70 @@
-import Image from "next/image";
 import portrait from "@/assets/portrait.webp";
+import { Divider } from "../components/Divider";
+import { LinkButton } from "../components/LinkButton";
+import { Navigation } from "../components/Navigation";
+import { PortraitCard } from "../components/PortraitCard";
+import { SectionMarker } from "../components/SectionMarker";
+import { Signature } from "../components/Signature";
 
-function Arrow() {
-  return (
-    <span className="font-body text-arrow" aria-hidden="true">
-      ↗
-    </span>
-  );
-}
+const navItems = [
+  { label: "WORK", href: "#work" },
+  { label: "ABOUT", href: "#about" },
+  { label: "CONTACT", href: "#contact" },
+];
 
 export default function Hero() {
   return (
-    <section className="intro">
-      <nav className="nav">
-        <a className="signature" href="#top" aria-label="vh">
-          <span className="font-ui text-logo">vh</span>
-          <span className="cursor" />
-        </a>
-        <div className="links font-ui text-label">
-          <a href="#work">WORK</a>
-          <a href="#about">ABOUT</a>
-          <a href="#contact">CONTACT</a>
-          <a className="btn btn-outline font-ui text-button" href="#contact">
-            LET’S TALK <Arrow />
-          </a>
-        </div>
-      </nav>
+    <section id="top" className="intro">
+      <div className="flex h-16 items-center justify-between">
+        <Signature />
+        <Navigation
+          items={navItems}
+          action={
+            <LinkButton variant="secondary" href="#contact">
+              LET’S TALK
+            </LinkButton>
+          }
+        />
+      </div>
 
-      <div className="hero">
-        <div className="details font-ui text-label">
-          <div className="marker">
-            <span className="index">01</span>
-            <span>INDEPENDENT UI/UX &amp; WEB DESIGNER</span>
-          </div>
+      <div className="flex flex-col gap-6 pt-10 md:pt-16">
+        <div className="flex flex-col items-start justify-between gap-3 font-ui text-label md:flex-row md:items-center">
+          <SectionMarker index="01">INDEPENDENT UI/UX &amp; WEB DESIGNER</SectionMarker>
           <span className="text-ink-muted">PORTFOLIO / VOL. 2026</span>
         </div>
 
         <h1 className="font-display text-display">Veronika Haran</h1>
-        <hr className="divider" />
+        <Divider />
 
-        <div className="positioning">
-          <div className="copy">
+        <div className="flex flex-col justify-between gap-10 pt-2 lg:flex-row lg:gap-20">
+          <div className="flex max-w-201 flex-col items-start gap-6">
             <h2 className="font-display text-heading">
               Good ideas deserve <br />
               thoughtful design.
             </h2>
-            <p className="font-body text-body">
+            <p className="max-w-188 font-body text-body text-ink-muted">
               I’m a designer with 2 years of professional experience, known for my attention to detail and
               results-driven approach. I help startups and solo entrepreneurs turn their ideas into clean, modern
               websites and apps that work.
             </p>
-            <div className="actions">
-              <a className="btn btn-primary font-ui text-button" href="#work">
-                EXPLORE MY WORK <Arrow />
-              </a>
-              <a className="btn btn-outline font-ui text-button" href="#contact">
-                GET IN TOUCH <Arrow />
-              </a>
+            <div className="flex flex-wrap gap-4 pt-2">
+              <LinkButton href="#work">EXPLORE MY WORK</LinkButton>
+              <LinkButton variant="secondary" href="#contact">
+                GET IN TOUCH
+              </LinkButton>
             </div>
           </div>
 
-          <figure className="card">
-            <Image className="aspect-portrait" src={portrait} alt="Veronika Haran" priority sizes="340px" />
-            <figcaption className="font-ui text-label">
-              <span className="text-ink-muted">VERONIKA HARAN</span>
-              <span>UI/UX &amp; WEB DESIGNER</span>
-            </figcaption>
-          </figure>
+          <PortraitCard
+            image={portrait}
+            imageAlt="Veronika Haran"
+            name="VERONIKA HARAN"
+            role="UI/UX & WEB DESIGNER"
+            priority
+          />
         </div>
 
-        <div className="footnote font-ui text-label">
+        <div className="flex flex-col justify-between gap-2 pt-6 font-ui text-label text-ink-muted md:flex-row">
           <span>STRATEGY → STRUCTURE → INTERFACE</span>
           <span>SCROLL TO EXPLORE ↓</span>
         </div>

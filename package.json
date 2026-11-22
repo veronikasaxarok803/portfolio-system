@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build-storybook:public && next build",
     "lint": "oxlint",
     "start": "next start",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build-storybook:public": "storybook build -o public/storybook"
   },
   "dependencies": {
     "next": "^16.4.6",

@@ -4,7 +4,7 @@ export default function Contact() {
       <section id="contact" className="contact">
         <div className="container contact-grid">
           <div>
-            <p className="font-ui text-label">06 / LET’S MAKE SOMETHING GOOD</p>
+            <p className="font-ui text-label">07 / LET’S MAKE SOMETHING GOOD</p>
             <h2 className="contact-title font-display text-title">
               Your next idea.
               <br />

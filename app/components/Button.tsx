@@ -2,6 +2,8 @@
 
 import { useId, type ButtonHTMLAttributes, type MouseEvent } from "react";
 
+import { buttonBase as base, buttonSizes as sizes, buttonVariants as variants } from "./buttonStyles";
+
 type Variant = "primary" | "secondary";
 type Size = "md" | "lg";
 
@@ -14,25 +16,6 @@ export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disable
   disabled?: boolean;
   /** Пояснення під вимкненою кнопкою, зв'язане з нею через `aria-describedby`. Показується тільки коли `disabled`. */
   disabledReason?: string;
-};
-
-const base =
-  "inline-flex items-center justify-center rounded-control border font-ui text-button transition-colors " +
-  "cursor-pointer outline-offset-2 focus-visible:outline-2 focus-visible:outline-ink " +
-  "aria-disabled:cursor-not-allowed aria-disabled:border-line aria-disabled:bg-surface aria-disabled:text-ink-muted";
-
-const variants: Record<Variant, string> = {
-  primary:
-    "border-accent bg-accent text-ink " +
-    "not-aria-disabled:hover:border-ink not-aria-disabled:hover:bg-ink not-aria-disabled:hover:text-canvas",
-  secondary:
-    "border-ink-muted text-ink " +
-    "not-aria-disabled:hover:border-ink-muted not-aria-disabled:hover:bg-ink-muted not-aria-disabled:hover:text-canvas",
-};
-
-const sizes: Record<Size, string> = {
-  md: "px-6 py-3",
-  lg: "px-8 py-4",
 };
 
 /**

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { Button } from "./Button";
 
 export type NavigationItem = {
@@ -17,6 +17,8 @@ export type NavigationProps = {
   ariaLabel?: string;
   /** Текст кнопки, в яку меню згортається на вузькому екрані. */
   menuLabel?: string;
+  /** Необов'язкова дія в кінці меню, наприклад кнопка-посилання «Let's talk». */
+  action?: ReactNode;
   className?: string;
 };
 
@@ -35,6 +37,7 @@ export function Navigation({
   active,
   ariaLabel = "Main",
   menuLabel = "Menu",
+  action,
   className = "",
 }: NavigationProps) {
   const [open, setOpen] = useState(false);
@@ -97,6 +100,7 @@ export function Navigation({
               </li>
             );
           })}
+          {action && <li>{action}</li>}
         </ul>
       </div>
     </nav>
