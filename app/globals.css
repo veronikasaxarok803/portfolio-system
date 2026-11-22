@@ -1,18 +1,38 @@
-:root {
-  --ink: #171715;
-  --muted: #68675f;
-  --line: #bab7ae;
-  --paper: #f4f3ef;
-  --accent: #e94a22;
-  --mono: 'IBM Plex Mono', ui-monospace, monospace;
-  --grotesk: 'Space Grotesk Variable', sans-serif;
-  --sans: 'Inter Variable', sans-serif;
+@import "tailwindcss";
+
+/* Токени дизайн-системи: єдине джерело значень (з Figma). */
+@theme {
+  --color-*: initial;
+  --color-canvas: #f5f1eb;
+  --color-hero-from: #f7f2ee;
+  --color-hero-to: #efe6dd;
+  --color-surface: #f4f3ef;
+  --color-line: #bab7ae;
+  --color-accent: #e94a22;
+  --color-ink: #171715;
+  --color-ink-muted: #68675f;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), sans-serif;
+  --font-grotesk: var(--font-space-grotesk), sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
 }
 
 .page {
   min-height: 100vh;
-  background: linear-gradient(to right, #f7f2ee, #efe6dd);
-  color: var(--ink);
+  background: linear-gradient(to right, var(--color-hero-from), var(--color-hero-to));
+  color: var(--color-ink);
 }
 
 .intro {
@@ -32,16 +52,16 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  font: 700 23px var(--mono);
+  font: 700 23px var(--font-mono);
   letter-spacing: -1px;
-  color: #000;
+  color: var(--color-black);
   text-decoration: none;
 }
 
 .cursor {
   width: 10px;
   height: 22px;
-  background: var(--accent);
+  background: var(--color-accent);
 }
 
 .links {
@@ -51,13 +71,13 @@
 }
 
 .links > a:not(.btn) {
-  font: 500 12px var(--mono);
-  color: var(--ink);
+  font: 500 12px var(--font-mono);
+  color: var(--color-ink);
   text-decoration: none;
 }
 
 .links > a:not(.btn):hover {
-  color: var(--accent);
+  color: var(--color-accent);
 }
 
 .btn {
@@ -66,8 +86,8 @@
   gap: 24px;
   height: 52px;
   padding: 0 22px;
-  border: 1.5px solid var(--ink);
-  font: 500 13px var(--mono);
+  border: 1.5px solid var(--color-ink);
+  font: 500 13px var(--font-mono);
   text-decoration: none;
   white-space: nowrap;
   transition: transform 0.15s ease, background 0.15s ease;
@@ -79,23 +99,23 @@
 
 .btn:focus-visible,
 .links a:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 
 .btn-outline {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--color-surface);
+  color: var(--color-ink);
 }
 
 .btn-primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
 }
 
 .arrow {
-  font: 400 22px var(--sans);
+  font: 400 22px var(--font-sans);
 }
 
 .hero {
@@ -110,13 +130,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font: 500 12px/1.4 var(--mono);
+  font: 500 12px/1.4 var(--font-mono);
   letter-spacing: 0.5px;
 }
 
 .footnote {
   padding-top: 22px;
-  color: var(--muted);
+  color: var(--color-ink-muted);
 }
 
 .marker {
@@ -126,24 +146,16 @@
 }
 
 .index {
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
   padding: 3px 6px;
   font-weight: 400;
   letter-spacing: 0;
 }
 
-.accent {
-  color: var(--accent);
-}
-
-.muted {
-  color: var(--muted);
-}
-
 .name {
   margin: 0;
-  font: 700 146px/1.04 var(--grotesk);
+  font: 700 146px/1.04 var(--font-grotesk);
   letter-spacing: -8px;
 }
 
@@ -152,7 +164,7 @@
   height: 1px;
   margin: 0;
   border: 0;
-  background: var(--line);
+  background: var(--color-line);
 }
 
 .positioning {
@@ -172,15 +184,15 @@
 
 .copy h2 {
   margin: 0;
-  font: 700 49px/1.12 var(--grotesk);
+  font: 700 49px/1.12 var(--font-grotesk);
   letter-spacing: -2px;
 }
 
 .copy p {
   margin: 0;
   max-width: 752px;
-  font: 400 21px/1.6 var(--sans);
-  color: var(--muted);
+  font: 400 21px/1.6 var(--font-sans);
+  color: var(--color-ink-muted);
 }
 
 .actions {
@@ -193,12 +205,13 @@
   flex: none;
   width: 342px;
   margin: 0;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--color-ink);
 }
 
 .card img {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 342 / 420;
   object-fit: cover;
 }
@@ -208,8 +221,8 @@
   flex-direction: column;
   gap: 4px;
   padding: 16px 20px;
-  background: var(--paper);
-  font: 500 11px var(--mono);
+  background: var(--color-surface);
+  font: 500 11px var(--font-mono);
   letter-spacing: 0.5px;
 }
 

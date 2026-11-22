@@ -1,11 +1,15 @@
-import portrait from './assets/portrait.webp'
-import './App.css'
+import Image from "next/image";
+import portrait from "@/assets/portrait.webp";
 
 function Arrow() {
-  return <span className="arrow" aria-hidden="true">↗</span>
+  return (
+    <span className="arrow" aria-hidden="true">
+      ↗
+    </span>
+  );
 }
 
-export default function App() {
+export default function Home() {
   return (
     <div className="page">
       <section className="intro">
@@ -28,9 +32,9 @@ export default function App() {
           <div className="details">
             <div className="marker">
               <span className="index">01</span>
-              <span className="accent">INDEPENDENT UI/UX &amp; WEB DESIGNER</span>
+              <span className="text-accent">INDEPENDENT UI/UX &amp; WEB DESIGNER</span>
             </div>
-            <span className="muted">PORTFOLIO / VOL. 2026</span>
+            <span className="text-ink-muted">PORTFOLIO / VOL. 2026</span>
           </div>
 
           <h1 className="name">Veronika Haran</h1>
@@ -39,8 +43,7 @@ export default function App() {
           <div className="positioning">
             <div className="copy">
               <h2>
-                Good ideas deserve
-                <br />
+                Good ideas deserve <br />
                 thoughtful design.
               </h2>
               <p>
@@ -59,10 +62,10 @@ export default function App() {
             </div>
 
             <figure className="card">
-              <img src={portrait} alt="Veronika Haran" />
+              <Image src={portrait} alt="Veronika Haran" priority sizes="342px" />
               <figcaption>
-                <span className="muted">VERONIKA HARAN</span>
-                <span className="accent">UI/UX &amp; WEB DESIGNER</span>
+                <span className="text-ink-muted">VERONIKA HARAN</span>
+                <span className="text-accent">UI/UX &amp; WEB DESIGNER</span>
               </figcaption>
             </figure>
           </div>
@@ -74,5 +77,5 @@ export default function App() {
         </div>
       </section>
     </div>
-  )
+  );
 }
