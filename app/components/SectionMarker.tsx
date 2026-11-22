@@ -12,7 +12,7 @@ export type SectionMarkerProps = {
 export function SectionMarker({ index, children, className = "" }: SectionMarkerProps) {
   return (
     <div className={`flex items-center gap-3 font-ui text-label text-ink ${className}`.trim()}>
-      <span className="border border-accent px-2 py-1">{index}</span>
+      <span className="border border-accent px-2 py-2">{index}</span>
       <span>{children}</span>
     </div>
   );

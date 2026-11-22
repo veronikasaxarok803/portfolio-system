@@ -35,7 +35,7 @@ export default function Contact() {
           <div className="footer-inner">
             <div className="footer-brand">
               <span className="font-ui text-logo">vh</span>
-              <span className="cursor" />
+              <span className="h-6 w-2 bg-accent" />
               <span className="footer-copy font-ui text-label">© 2026 VERONIKA HARAN</span>
             </div>
             <p className="font-ui text-label text-ink-muted">THOUGHTFUL DESIGN. MEANINGFUL CONNECTIONS.</p>

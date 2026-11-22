@@ -21,7 +21,7 @@ export function PortraitCard({ image, imageAlt, name, role, priority = false, cl
       <div className="relative aspect-portrait w-full overflow-hidden">
         <Image src={image} alt={imageAlt} fill priority={priority} sizes="340px" className="object-cover" />
       </div>
-      <figcaption className="flex flex-col gap-1 bg-surface px-5 py-4 font-ui text-label">
+      <figcaption className="flex flex-col gap-2 bg-surface px-4 py-4 font-ui text-label">
         <span className="text-ink-muted">{name}</span>
         <span className="text-ink">{role}</span>
       </figcaption>

@@ -15,7 +15,7 @@ export function Signature({ text = "vh", href = "#top", className = "" }: Signat
       className={`inline-flex items-center gap-2 text-ink outline-offset-2 focus-visible:outline-2 focus-visible:outline-ink ${className}`.trim()}
     >
       <span className="font-ui text-logo">{text}</span>
-      <span aria-hidden="true" className="h-5.5 w-2.5 bg-accent" />
+      <span aria-hidden="true" className="h-6 w-2 bg-accent" />
     </a>
   );
 }

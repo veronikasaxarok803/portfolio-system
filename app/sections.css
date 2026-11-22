@@ -37,47 +37,10 @@
 
 .concept-grid {
   display: grid;
-  grid-template-columns: repeat(2, 596px);
+  grid-template-columns: repeat(2, minmax(0, 596px));
   justify-content: space-between;
   gap: 32px;
   margin-top: 64px;
-}
-
-.concept-scroll {
-  overflow-x: auto;
-}
-
-/* Мокапи концептів — ілюстрації інших продуктів, мають власну палітру */
-.concept {
-  position: relative;
-  width: 596px;
-  overflow: hidden;
-}
-
-.concept-forma {
-  --color-forma: #d6d2c4;
-  --color-forma-surface: #f8f6f0;
-  --color-forma-rule: #d4d0c5;
-  background: var(--color-forma);
-}
-
-.concept-clarity {
-  --color-clarity: #c8c9e6;
-  --color-clarity-surface: #f9f9fb;
-  --color-clarity-sidebar: #eeeef5;
-  --color-clarity-selected: #d7d5ee;
-  --color-clarity-summary: #e2e0f4;
-  --color-clarity-ink: #292844;
-  --color-clarity-muted: #77758b;
-  --color-clarity-label: #5d587c;
-  --color-clarity-status: #65617d;
-  --color-clarity-rule: #e5e4ee;
-  background: var(--color-clarity);
-}
-
-.concept-screen {
-  position: absolute;
-  overflow: hidden;
 }
 
 .concept-title {

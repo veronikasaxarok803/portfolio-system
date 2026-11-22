@@ -61,6 +61,7 @@ export default function Hero() {
             name="VERONIKA HARAN"
             role="UI/UX & WEB DESIGNER"
             priority
+            className="max-w-85"
           />
         </div>
 

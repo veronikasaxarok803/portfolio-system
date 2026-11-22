@@ -100,11 +100,6 @@
   padding-inline: 108px;
 }
 
-.cursor {
-  width: 10px;
-  height: 22px;
-  background: var(--color-accent);
-}
 
 /* Перший екран */
 .intro {
