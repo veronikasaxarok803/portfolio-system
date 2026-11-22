@@ -1,0 +1,111 @@
+import { Meta, ColorPalette, ColorItem, Unstyled } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Tokens" />
+
+# Токени
+
+Значення беруться зі змінних у блоці `@theme` у `app/globals.css`. Тут вони не вписані: сторінка показує те, що оголошено в системі.
+
+## Кольори
+
+<ColorPalette>
+  <ColorItem
+    title="Фон і поверхні"
+    subtitle="canvas — фон сторінки, surface — картки й поля"
+    colors={{ canvas: "var(--color-canvas)", surface: "var(--color-surface)" }}
+  />
+  <ColorItem
+    title="Лінія"
+    subtitle="line — розділювачі й рамки карток"
+    colors={{ line: "var(--color-line)" }}
+  />
+  <ColorItem
+    title="Акцент"
+    subtitle="accent — кнопки, рамки, фони; не для дрібного тексту на світлому фоні"
+    colors={{ accent: "var(--color-accent)" }}
+  />
+  <ColorItem
+    title="Текст"
+    subtitle="ink — основний, ink-muted — приглушений"
+    colors={{ ink: "var(--color-ink)", "ink-muted": "var(--color-ink-muted)" }}
+  />
+  <ColorItem
+    title="Помилка"
+    subtitle="danger — текст помилки й межа поля в стані помилки"
+    colors={{ danger: "var(--color-danger)" }}
+  />
+</ColorPalette>
+
+## Шкала шрифтів
+
+Кожен зразок використовує справжній клас токена, тому висота рядка, трекінг і жирність береться з `@theme`.
+
+export const scale = [
+  { token: "text-display", font: "font-display", sample: "Veronika Haran" },
+  { token: "text-title", font: "font-display", sample: "Ideas made tangible." },
+  { token: "text-heading", font: "font-display", sample: "Good ideas deserve thoughtful design." },
+  { token: "text-subheading", font: "font-display", sample: "Forma — a quieter kind of web" },
+  { token: "text-body", font: "font-body", sample: "I help startups and solo entrepreneurs turn their ideas into clean, modern websites and apps that work. Українська: швидка бура лисиця." },
+  { token: "text-label", font: "font-ui", sample: "INDEPENDENT UI/UX & WEB DESIGNER" },
+  { token: "text-button", font: "font-ui", sample: "EXPLORE MY WORK" },
+  { token: "text-logo", font: "font-ui", sample: "vh" },
+  { token: "text-arrow", font: "font-body", sample: "↗" },
+];
+
+<Unstyled>
+  <div className="flex flex-col gap-6 text-ink">
+    {scale.map((row) => (
+      <div key={row.token} className="flex flex-col gap-2 border-b border-line pb-4">
+        <code className="font-ui text-label text-ink-muted">{row.token} · {row.font}</code>
+        <div className={`${row.font} ${row.token} text-ink`}>{row.sample}</div>
+      </div>
+    ))}
+  </div>
+</Unstyled>
+
+## Радіуси
+
+export const radii = ["rounded-control", "rounded-card"];
+
+<Unstyled>
+  <div className="flex gap-8">
+    {radii.map((token) => (
+      <div key={token} className="flex flex-col gap-3">
+        <div className={`h-24 w-24 border border-ink bg-surface ${token}`} />
+        <code className="font-ui text-label text-ink-muted">{token}</code>
+      </div>
+    ))}
+  </div>
+</Unstyled>
+
+## Пропорції картинок
+
+export const aspects = ["aspect-portrait", "aspect-cover"];
+
+<Unstyled>
+  <div className="flex items-end gap-8">
+    {aspects.map((token) => (
+      <div key={token} className="flex flex-col gap-3">
+        <div className={`w-48 border border-ink bg-surface ${token}`} />
+        <code className="font-ui text-label text-ink-muted">{token}</code>
+      </div>
+    ))}
+  </div>
+</Unstyled>
+
+## Відступи
+
+Окремих токенів немає: беремо кроки 8, 12, 16, 24 і 32 px (у Tailwind числа 2, 3, 4, 6 і 8).
+
+export const steps = [2, 3, 4, 6, 8];
+
+<Unstyled>
+  <div className="flex items-end gap-6">
+    {steps.map((n) => (
+      <div key={n} className="flex flex-col items-center gap-2">
+        <div className="bg-accent" style={{ width: `calc(var(--spacing) * ${n})`, height: `calc(var(--spacing) * ${n})` }} />
+        <code className="font-ui text-label text-ink-muted">p-{n}</code>
+      </div>
+    ))}
+  </div>
+</Unstyled>
